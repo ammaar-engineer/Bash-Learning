@@ -17,3 +17,5 @@ for file in "${fileName[@]}"; do
     echo "$i. $(checkType "$file")"$file""
 done
 echo "======File list======"
+
+fastfetch | grep "$USERNAME"
