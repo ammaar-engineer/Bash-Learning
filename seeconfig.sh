@@ -1,3 +1,5 @@
+#!/bin/bash -v
+
 # name=$(ls -la | awk '{print $2}')
 fileList=$(ls -la)
 fileName=($(echo "$fileList" | awk '{print $9}'))

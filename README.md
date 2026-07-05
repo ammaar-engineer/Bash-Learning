@@ -166,6 +166,53 @@ Ditemukan informasi bahwa ini nama nya Signal commands
 
 ___
 # Day 02
+**Cara membuat PATH** itu dengan kode seperti berikut
+```bash
+export PATH="$PATH:/home/quanta/Documents/engineer/Bash_scripting"
+# Atau bisa juga lebih disederhanakan
+export PATH="$PATH:$HOME/Documents/engineer/Bash_scripting"
+# $HOME=/home/quanta
+```
+Jangan lupa memberi ijin eksekusi file pada file yang ditentukan.
 
+**Liat kode-kode file** dengan menggunakan flag -v pada perintah saat eksekusi. Berikut cara nya
+```bash
+bash -v script.sh
+```
+Atau bisa juga kalo melalui file. Tambahkan baris ini di paling atas
+```bash
+#!/bin/bash -v
+```
+flag nya bisa digabung satu sama lain. Misal flag -x digabung dengan -v. Jadi -xv
+
+**Variabel-variabel yang ditemukan** pada saat belajar ada
+- HOME: /home/quanta
+- PATH: (kepanjangan ah)
+- MAIL: /var/spool/mail/quanta
+- PS1: \W>
+- HOSTNAME: amarix
+- INPUTRC: kosong
+- HISTSIZE: 500
+
+**Pertanyaan nya** apa kegunaan bashrc pada etc? apakah ini ada hubungan nya dengan live environtment pada arch? tapi kan di arch live environtment pake .zshrc
+
+**Special parameter** terdiri dari sebagai berikut:
+- "$@": none
+- "$*": Memilih semua parameter yang ada pada saat eksekusi
+- "$#": none
+- "$?": Expand to the exit status of the most recently executed foreground pipeline
+- "$$": none / output: 19489
+- "$!": none
+- "$_": none
+- "$0": none
+Ada pengujian pada salah satu special parameter. Pengujian yang pertama menggunakan "$?".
+```bash
+echo "$?" # output: 0
+
+ls amar # tes cari directory yang tidak ada
+
+echo "$?" # output: 2
+```
+Ketika ada program yang error. Maka output dari "$?" akan berubah seketika. Namun ketika program diantara nya berjalan lancar. Maka output nya tetap 0
 # Terakhir baca: 1.6
 ___
